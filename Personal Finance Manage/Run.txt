@@ -1,0 +1,2 @@
+> g++ main.cpp FinanceManager.cpp Budget.cpp Expense.cpp Category.cpp -o finance_manager
+> ./finance_manager  
