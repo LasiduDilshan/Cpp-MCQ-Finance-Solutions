@@ -21,7 +21,7 @@ int main() {
     };
 
     // Generate random expenses
-    for (int i = 0; i < 10000; ++i) { // Generate 10,000 expense entries
+    for (int i = 0; i < 100000; ++i) { // Generate 10,000 expense entries
         std::string month = months[std::rand() % 12];
         std::string category = "Category" + std::to_string(std::rand() % 10);
         double amount = std::rand() % 1000 + 1; // Random amount between 1 and 1000
@@ -37,8 +37,8 @@ int main() {
         return 1;
     }
 
-    double baseBudget = 1000000.0; // Starting budget
-    double increment = 200000.0; // Increment for each month
+    double baseBudget = 10000000.0; // Starting budget
+    double increment = 2000000.0; // Increment for each month
 
     // Generate budgets for each month
     for (int i = 0; i < 12; ++i) {
