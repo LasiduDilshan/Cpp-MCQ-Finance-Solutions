@@ -1,0 +1,9 @@
+>>Intro: ASP = Academic, Skills, Projects 
+>>Database (Basically look at database normalization) and SQL 
+>>OOP 
+>>Should be able to write a code with cpp for a task like Hackerank/ProjectEular/LeepCode 
+>>Try to reverse an array like 
+>>Must be 100% confidence with projects in your CV 
+>>Git 
+>>Ubuntu kernel 
+>>O() notation: you do not need to write an optimal code, just write the code and compare with an optimum code in O notation.
