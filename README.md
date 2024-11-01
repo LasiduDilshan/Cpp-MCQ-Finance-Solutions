@@ -1,6 +1,6 @@
 # C++ Projects
 
-Welcome to my C++ Projects repository! This collection features various projects that I've developed to enhance my C++ programming skills. The projects are designed for learners and focus on practical applications rather than complex algorithms or advanced features.
+Welcome to my C++ repository! This collection features a couple of small-scale applications that I’ve developed to enhance my C++ programming skills. These projects focus on practical applications and are intended for learners looking to build their understanding of C++.
 
 ## Repository Structure
 
