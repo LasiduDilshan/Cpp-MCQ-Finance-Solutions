@@ -1,0 +1,2 @@
+> g++ main.cpp MCQGrader.cpp -o MCQGrader
+> .\MCQGrader.exe

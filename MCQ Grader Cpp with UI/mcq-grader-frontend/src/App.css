@@ -1,0 +1,101 @@
+/* Basic styling for the application */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  margin: 20px;
+}
+
+/* Navigation bar styling */
+.navbar {
+  background-color: #333;
+  padding: 10px;
+  color: white;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Form styling */
+form {
+  margin: 20px 0;
+}
+
+form div {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form label {
+  margin-right: 10px;
+}
+
+form input[type="file"] {
+  padding: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not([disabled]) {
+  background-color: #45a049;
+}
+
+/* Table styling */
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #45a049;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .App {
+    margin: 10px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  form div {
+    flex-direction: column;
+  }
+
+  form label, form input[type="file"] {
+    margin: 5px 0;
+  }
+}
