@@ -10,4 +10,8 @@
 
 ## Finance Manager: 
 
-![Screenshot 2025-01-04 100643](https://github.com/user-attachments/assets/d2c0ec1e-6bc6-4c2f-989e-6c40869fd6b5)
+![finance](https://github.com/user-attachments/assets/76e82a3d-0835-4317-9ec9-765850f911a9)
+
+## MCQ Grader: 
+
+![mcq](https://github.com/user-attachments/assets/17942ccc-daf4-42bc-b702-bbbe493a53be)
