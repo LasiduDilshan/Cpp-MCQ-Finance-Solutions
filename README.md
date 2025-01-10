@@ -2,7 +2,7 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/LasiduDilshan/Cpp-Projects.git
+   git clone https://github.com/LasiduDilshan/Cpp-MCQ-Finance-Solutions.git
    ```
 2. **Open with Visual Studio Code**: Launch the project folder in Visual Studio Code to access the source code.
 
