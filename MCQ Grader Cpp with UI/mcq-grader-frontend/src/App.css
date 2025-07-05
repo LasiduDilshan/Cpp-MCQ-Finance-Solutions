@@ -1,3 +1,24 @@
+:root {
+  /* App-specific theme variables */
+  --app-navbar-bg: #333;
+  --app-navbar-text: white;
+  --app-button-bg: #4CAF50;
+  --app-button-hover-bg: #45a049;
+  --app-button-disabled-bg: #ccc;
+  --app-table-border: #ddd;
+  --app-table-header-bg: #45a049;
+}
+
+:root.light {
+  --app-navbar-bg: #f8f9fa;
+  --app-navbar-text: #333;
+  --app-button-bg: #007bff;
+  --app-button-hover-bg: #0056b3;
+  --app-button-disabled-bg: #6c757d;
+  --app-table-border: #dee2e6;
+  --app-table-header-bg: #007bff;
+}
+
 /* Basic styling for the application */
 body {
   font-family: Arial, sans-serif;
@@ -13,9 +34,12 @@ body {
 
 /* Navigation bar styling */
 .navbar {
-  background-color: #333;
+  background-color: var(--app-navbar-bg);
   padding: 10px;
-  color: white;
+  color: var(--app-navbar-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar h1 {
@@ -37,28 +61,30 @@ form div {
 
 form label {
   margin-right: 10px;
+  color: var(--text-color);
 }
 
 form input[type="file"] {
   padding: 5px;
+  color: var(--text-color);
 }
 
-button {
+.App button {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: var(--app-button-bg);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-button[disabled] {
-  background-color: #ccc;
+.App button[disabled] {
+  background-color: var(--app-button-disabled-bg);
   cursor: not-allowed;
 }
 
-button:hover:not([disabled]) {
-  background-color: #45a049;
+.App button:hover:not([disabled]) {
+  background-color: var(--app-button-hover-bg);
 }
 
 /* Table styling */
@@ -69,16 +95,18 @@ table {
 }
 
 table, th, td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--app-table-border);
 }
 
 th, td {
   padding: 10px;
   text-align: left;
+  color: var(--text-color);
 }
 
 th {
-  background-color: #45a049;
+  background-color: var(--app-table-header-bg);
+  color: white;
 }
 
 /* Responsive design for mobile devices */

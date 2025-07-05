@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useTable } from 'react-table';
+import PropTypes from 'prop-types';
 import './App.css';
+import ThemeToggle from './ThemeToggle';
 
 // Define months
 const months = [
@@ -19,21 +21,21 @@ const DataTable = ({ columns, data }) => {
     return (
         <table {...getTableProps()} className="data-table">
             <thead>
-                {headerGroups.map(headerGroup => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
-                        {headerGroup.headers.map(column => (
-                            <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                {headerGroups.map((headerGroup, groupIndex) => (
+                    <tr {...headerGroup.getHeaderGroupProps()} key={groupIndex}>
+                        {headerGroup.headers.map((column, columnIndex) => (
+                            <th {...column.getHeaderProps()} key={columnIndex}>{column.render('Header')}</th>
                         ))}
                     </tr>
                 ))}
             </thead>
             <tbody {...getTableBodyProps()}>
-                {rows.map(row => {
+                {rows.map((row, rowIndex) => {
                     prepareRow(row);
                     return (
-                        <tr {...row.getRowProps()}>
-                            {row.cells.map(cell => (
-                                <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                        <tr {...row.getRowProps()} key={rowIndex}>
+                            {row.cells.map((cell, cellIndex) => (
+                                <td {...cell.getCellProps()} key={cellIndex}>{cell.render('Cell')}</td>
                             ))}
                         </tr>
                     );
@@ -41,6 +43,11 @@ const DataTable = ({ columns, data }) => {
             </tbody>
         </table>
     );
+};
+
+DataTable.propTypes = {
+    columns: PropTypes.array.isRequired,
+    data: PropTypes.array.isRequired,
 };
 
 function App() {
@@ -53,7 +60,6 @@ function App() {
             return acc;
         }, {})
     );
-    const [output, setOutput] = useState('');
     const [outputData, setOutputData] = useState([]);
 
     const handleBudgetChange = (index, value) => {
@@ -87,7 +93,6 @@ function App() {
             );
             await axios.post('http://localhost:5000/set-data', { budgets, expenses: formattedExpenses });
             const response = await axios.get('http://localhost:5000/process');
-            setOutput(response.data.output);
 
             // Process CSV output into a table format
             const lines = response.data.output.trim().split('\n');
@@ -105,7 +110,7 @@ function App() {
     );
 
     const data = React.useMemo(
-        () => outputData.rows ? outputData.rows.map((row, index) => {
+        () => outputData.rows ? outputData.rows.map((row) => {
             const rowData = {};
             outputData.headers.forEach((header, i) => {
                 rowData[header] = row[i];
@@ -117,6 +122,10 @@ function App() {
 
     return (
         <div className="app-container">
+            <div className="app-header">
+                <h1 className="app-title">Personal Finance Manager</h1>
+                <ThemeToggle />
+            </div>
             <div className="section-container">
                 <div className="budget-section">
                     <h2>Budgets</h2>

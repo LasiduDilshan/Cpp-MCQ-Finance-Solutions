@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { CSVLink } from 'react-csv';
 import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 import './App.css';
+import ThemeToggle from './ThemeToggle';
 
 function App() {
     const [answersFile, setAnswersFile] = useState(null);
@@ -63,6 +64,7 @@ function App() {
         <div className="App">
             <div className="navbar">
                 <h1>MCQ Grader</h1>
+                <ThemeToggle />
             </div>
             <form onSubmit={handleSubmit}>
                 <div>

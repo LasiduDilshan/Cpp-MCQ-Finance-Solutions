@@ -1,8 +1,46 @@
+:root {
+  /* App-specific theme variables */
+  --app-primary-bg: #007bff;
+  --app-primary-hover: #0056b3;
+  --app-danger-bg: #ff4d4d;
+  --app-danger-hover: #cc0000;
+  --app-table-header-bg: #f2f2f2;
+  --app-table-header-text: black;
+  --app-table-cell-bg: #333;
+  --app-table-cell-text: white;
+  --app-table-border: #ddd;
+}
+
+:root.light {
+  --app-primary-bg: #007bff;
+  --app-primary-hover: #0056b3;
+  --app-danger-bg: #dc3545;
+  --app-danger-hover: #c82333;
+  --app-table-header-bg: #f8f9fa;
+  --app-table-header-text: #333;
+  --app-table-cell-bg: #fff;
+  --app-table-cell-text: #333;
+  --app-table-border: #dee2e6;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.app-title {
+  margin: 0;
+  color: var(--text-color);
 }
 
 .section-container {
@@ -16,6 +54,14 @@
   margin: 0 10px;
 }
 
+.budget-section h2, .expense-section h2, .output-section h2 {
+  color: var(--text-color);
+}
+
+.budget-section h3, .expense-section h3 {
+  color: var(--text-color);
+}
+
 .input-group {
   display: flex;
   margin-bottom: 10px;
@@ -25,32 +71,38 @@
   margin-right: 10px;
   padding: 5px;
   flex: 1;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--app-table-border);
+  border-radius: 4px;
 }
 
 .add-expense-button, .process-button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: var(--app-primary-bg);
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .add-expense-button:hover, .process-button:hover {
-  background-color: #0056b3;
+  background-color: var(--app-primary-hover);
 }
 
 .remove-expense-button {
   margin-left: 10px;
   padding: 5px 10px;
-  background-color: #ff4d4d;
+  background-color: var(--app-danger-bg);
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .remove-expense-button:hover {
-  background-color: #cc0000;
+  background-color: var(--app-danger-hover);
 }
 
 .data-table {
@@ -59,14 +111,16 @@
 }
 
 .data-table th {
-  background-color: #f2f2f2;
+  background-color: var(--app-table-header-bg);
   text-align: left;
-  color: black; /* Set the text color of the table headings to black */
+  color: var(--app-table-header-text);
+  padding: 8px;
+  border: 1px solid var(--app-table-border);
 }
 
 .data-table td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--app-table-border);
   padding: 8px;
-  color: white; /* Set the text color of the table cells to white */
-  background-color: #333; /* Set the background color of the table cells to dark grey */
+  color: var(--app-table-cell-text);
+  background-color: var(--app-table-cell-bg);
 }
